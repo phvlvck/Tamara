@@ -1,4 +1,3 @@
-
     <style>
         body {
             background-image: url('https://i.imgur.com/neyQFT3_d.webp?maxwidth=760&fidelity=grand');
@@ -11,6 +10,9 @@
             padding: 0;
             color: white;
             line-height: 1.6;
+            min-height: 100vh;
+            padding: 10px; /* إضافة بعض المساحة الداخلية للجسم */
+            box-sizing: border-box; /* لضمان عدم تأثير المساحة الداخلية على الحجم الكلي */
         }
 
         h1, h2 {
@@ -59,8 +61,8 @@
         }
 
         .icon, .instagram-icon, .pubg-icon {
-            width: 15px; /* تقليل حجم الأيقونات */
-            height: 15px; /* تقليل حجم الأيقونات */
+            width: 15px;
+            height: 15px;
             vertical-align: middle;
             margin-right: 5px;
         }
@@ -75,13 +77,30 @@
             font-style: italic;
             color: #aaa;
         }
+
         .profile-pic {
-            width: 100px; /* حجم الصورة */
-            height: 100px; /* حجم الصورة */
-            border-radius: 50%; /* لجعل الصورة دائرية */
-            object-fit: cover; /* لملء الصورة للدائرة */
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
             display: block;
-            margin: 20px auto; /* توسيط الصورة */
+            margin: 20px auto;
+        }
+
+        /* تعديلات للوسائط الاجتماعية */
+        .social-media li {
+            display: flex;
+            align-items: center;
+        }
+
+        .social-media img {
+            margin-right: 10px;
+        }
+
+        /* تعديلات لتقليل الهوامش */
+        h1, h2, p, ul, li {
+            padding-left: 5px;
+            padding-right: 5px;
         }
     </style>
 
@@ -119,20 +138,20 @@
                 object-fit: cover;
             }}
             .icon {{
-                width: 15px; /* تقليل حجم الأيقونات */
-                height: 15px; /* تقليل حجم الأيقونات */
+                width: 15px;
+                height: 15px;
                 vertical-align: middle;
                 margin-right: 5px;
             }}
             .instagram-icon {{
-                width: 15px; /* تقليل حجم الأيقونات */
-                height: 15px; /* تقليل حجم الأيقونات */
+                width: 15px;
+                height: 15px;
                 vertical-align: middle;
                 margin-right: 5px;
             }}
             .pubg-icon {{
-                width: 15px; /* تقليل حجم الأيقونات */
-                height: 15px; /* تقليل حجم الأيقونات */
+                width: 15px;
+                height: 15px;
                 vertical-align: middle;
                 margin-right: 5px;
             }}
@@ -142,36 +161,38 @@
         <img src="https://i.imgur.com/C8hp84G_d.webp?maxwidth=760&fidelity=grand" class="profile-pic">
         <h1>مرحباً بك في موقعي</h1>
         <p>18 ديسمبر 2023</p>
-        <p>عدد المشاهدات: {7567302}</p>
+        <p>عدد المشاهدات: 7567302</p>
         <li>𝗠𝗬 𝗡𝗔𝗠𝗘:𝗔𝗵𝗺𝗲𝗱</li>
         <li>𝗠𝗬 𝗡𝗜𝗖𝗞𝗡𝗔𝗠𝗘:𝗕𝗶𝘀𝗼</li>
         <li>𝗠𝗠𝗬 𝗔𝗚𝗘:𝟭𝟱</li>
         <li>𝗘𝗩𝗘𝗡 𝗠𝗘, 𝗪𝗛𝗢 𝗨𝗦𝗘𝗗 𝗧𝗢 𝗠𝗔𝗞𝗘 𝗧𝗛𝗘𝗠 𝗙𝗘𝗘𝗟 𝗚𝗢𝗢𝗗, 𝗪𝗔𝗦𝗡'𝗧 𝗙𝗘𝗘𝗟𝗜𝗡𝗚 𝗪𝗘𝗟𝗟.</li>
+                <li>𝗖𝗜𝗧𝗬 ➣ : 𝙆𝙄𝙍𝙆𝙐𝙆</li>
+        <li>𝗨𝗦𝗘𝗥𝗡𝗔𝗠𝗘 ➣ : @ISSFII</li>
+
 
         <h2>╰☆☆ 𝗦𝗼𝗰𝗶𝗮𝗹 𝗠𝗲𝗱𝗶𝗮☆☆╮</h2>
-        <ul>
+        <ul class="social-media">
             <li><img src="https://i.imgur.com/Jpdakbm_d.webp?maxwidth=1520&fidelity=grand" class="icon"><a href="https://t.me/ISSFII" target="_blank">𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦:@𝐈𝐒𝐒𝐅𝐈𝐈</a></li>
             <li><img src="https://i.imgur.com/aBfqO8v_d.webp?maxwidth=1520&fidelity=grand" class="instagram-icon"><a href="https://www.instagram.com/44jj4j/" target="_blank">𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦:@𝟒𝟒𝐣𝐣𝟒𝐣</a></li>
-            <li><img src="https://i.imgur.com/VO5MjSE_d.webp?maxwidth=760&fidelity=grand" class="pubg-icon">𝐏𝐔𝐁𝐆:𝟓𝟐𝟏𝟏𝟓𝟐𝟎𝟗𝟏𝟏</li>
-            <li><img src="https://i.imgur.com/Jpdakbm_d.webp?maxwidth=1520&fidelity=grand" class="icon"><a href="https://t.me/lshnor" target="_blank">𝗠𝗬 𝗖𝗛𝗔𝗡𝗡𝗘𝗟:
- @lshnor</a></li>
+            <li><img src="https://i.imgur.com/VO5MjSE_d.webp?maxwidth=760&fidelity=grand" class="pubg-icon"><a href="https://i.imgur.com/VO5MjSE_d.webp?maxwidth=760&fidelity=grand" target="_blank">𝐏𝐔𝐁𝐆:𝟓𝟐𝟏𝟏𝟓𝟐𝟎𝟗𝟏𝟏</a></li>
+            <li><img src="https://i.imgur.com/Jpdakbm_d.webp?maxwidth=1520&fidelity=grand" class="icon"><a href="https://t.me/lshnor" target="_blank">𝗠𝗬 𝗖𝗛𝗔𝗡𝗡𝗘𝗟: @lshnor</a></li>
         </ul>
         <h2>·.¸¸.· 𝙈𝙐𝙎𝙄𝘾 ·.¸¸.·</h2>
         <ul>
             <li>يا خسارة - مسلم<br><audio controls><source src='https://f.top4top.io/m_33429dyim0.mp3' type='audio/mpeg'></audio></li>
             <li>قلبي دق - تامر حسني<br><audio controls><source src='https://i.top4top.io/m_3342iy5p81.mp3' type='audio/mpeg'></audio></li>
             <li>حالة حب - اليسا<br><audio controls><source src='https://h.top4top.io/m_3342k638j0.mp3' type='audio/mpeg'></audio></li>
-            <li>بنت الجيران - حسن شاكوش و عمر كمال<br><audio controls><source src='https://f.top4top.io/m_3342rjbjj0.mp3' type='audio/mpeg'></audio></li>
+            <li>ب
+        بنت الجيران - حسن شاكوش و عمر كمال<br><audio controls><source src='https://f.top4top.io/m_3342rjbjj0.mp3' type='audio/mpeg'></audio></li>
             <li>يا بتاع النعناع - مصطفى حجاج<br><audio controls><source src='https://h.top4top.io/m_3342tnvkw0.mp3' type='audio/mpeg'></audio></li>
-            <li>أغنية 1 - فنان غير معروف<br><audio controls><source src='https://f.top4top.io/m_3
-342phqh20.mp3' type='audio/mpeg'></audio></li>
+            <li>أغنية 1 - فنان غير معروف<br><audio controls><source src='https://f.top4top.io/m_3342phqh20.mp3' type='audio/mpeg'></audio></li>
             <li>أغنية 2 - فنان غير معروف<br><audio controls><source src='https://a.top4top.io/m_33428avpd1.mp3' type='audio/mpeg'></audio></li>
             <li>أغنية 3 - فنان غير معروف<br><audio controls><source src='https://l.top4top.io/m_33425lpdr0.mp3' type='audio/mpeg'></audio></li>
         </ul>
     </body>
     </html>
     <br>
-    <video width="320"height="240" controls>
+    <video width="320" height="240" controls>
         <source src="https://i.imgur.com/ceFRyAt.mp4" type="video/mp4">
         متصفحك لا يدعم تشغيل الفيديو.
     </video>
@@ -204,16 +225,15 @@
         متصفحك لا يدعم تشغيل الفيديو.
     </video>
     <p>
-ناري ماتطفى ولا نارك طفت 🖤.
-__________________________________
-</p>
+        ناري ماتطفى ولا نارك طفت .
+        __________________________________
+    </p>
 
-
-   <br>
+    <br>
     <video width="320" height="240" controls>
         <source src="https://imgur.com/jA50teP.mp4" type="video/mp4">
         <p>
-        __________________________________
+            __________________________________
         </p>
-        </body>
-        </html>    
+    </body>
+            </html>
