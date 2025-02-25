@@ -90,11 +90,27 @@
                 font-size: 20px;
             }
         }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="https://i.imgur.com/C8hp84G_d.webp?maxwidth=760&fidelity=grand" class="profile-pic">
         <h2>مرحباً بك في موقعي</h2>
         <p>| 18 ديسمبر 2023</p>
         <p>| عدد المشاهدات: <span id="viewCount">7567302</span></p>
@@ -105,54 +121,69 @@
         <p> <span style="font-size: 18px;"><span style="color: blue; font-weight: bold; font-size: 20px;">|</span> 𝗖𝗜𝗧𝗬 ➣ : 𝙆𝙄𝙍𝙆𝙐𝙆</span></p>
         <p> <span style="font-size: 18px;"><span style="color: blue; font-weight: bold; font-size: 20px;">|</span> 𝗨𝗦𝗘𝗥𝗡𝗔𝗠𝗘 ➣ : @ISSFII</span></p>
 
-        <h2>كتاباتي</h2>
-        <p>| أيام ذاك الوكت من أصفن<br>
-            | عليهن<br>
-            | أبجي مَن اباوع صور ضَاحك<br>
-            | جنت بيهن<br>
-            <br>
-            | گبل للباب اكلج لا تطلعين<br>
-            | هسه شلون اطلعج من حَياتي<br>
-            | لا يُمكنك أن تُشفى في نفس البيئة التي جعلتك مريضا، غادر<br>
-            | ناري ماتطفى ولا نارك طفت .
-        </p>
+        <div>
+            <button onclick="showSection('writing')">كتاباتي</button>
+            <button onclick="showSection('videos')">فيديوهاتي</button>
+            <button onclick="showSection('audio')">فويساتي وأغاني</button>
+            <button onclick="showSection('social')">معلومات التواصل الاجتماعي</button>
+        </div>
 
-        <h2>فيديوهاتي</h2>
-        <video controls style="width: 90%; height: auto;">
-            <source src="https://i.imgur.com/ceFRyAt.mp4" type="video/mp4">
-            متصفحك لا يدعم تشغيل الفيديو.
-        </video>
-        <video controls style="width: 90%; height: auto;">
-            <source src="https://i.imgur.com/yu4OWzN.mp4" type="video/mp4">
-            متصفحك لا يدعم تشغيل الفيديو.
-        </video>
-        <video controls style="width: 90%; height: auto;">
-            <source src="https://imgur.com/r3WuxZb.mp4" type="video/mp4">
-            متصفحك لا يدعم تشغيل الفيديو.
-        </video>
-        <video controls style="width: 90%; height: auto;">
-            <source src="https://imgur.com/jA50teP.mp4" type="video/mp4">
-            متصفحك لا يدعم تشغيل الفيديو.
-        </video>
+        <div id="writing" class="section active">
+            <h2>كتاباتي</h2>
+            <p>| أيام ذاك الوكت من أصفن<br>
+                | عليهن<br>
+                | أبجي مَن اباوع صور ضَاحك<br>
+                | جنت بيهن<br>
+                <br>
+                | گبل للباب اكلج لا تطلعين<br>
+                | هسه شلون اطلعج من حَياتي<br>
+                | لا يُمكنك أن تُشفى في نفس البيئة التي جعلتك مريضا، غادر<br>
+                | ناري ماتطفى ولا نارك طفت .
+            </p>
+        </div>
 
-        <h2>فويساتي وأغاني</h2>
-        <audio controls style="width: 90%; height: auto;">
-            <source src="your_audio_file.mp3" type="audio/mpeg">
-            متصفحك لا يدعم تشغيل الصوت.
-        </audio>
-        <audio controls style="width: 90%; height: auto;">
-            <source src="your_audio_file2.mp3" type="audio/mpeg">
-            متصفحك لا يدعم تشغيل الصوت.
-        </audio>
+        <div id="videos" class="section">
+            <h2>فيديوهاتي</h2>
+            <video controls style="width: 90%; height: auto;">
+                <source src="https://i.imgur.com/ceFRyAt.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+            <video controls style="width: 90%; height: auto;">
+                <source src="https://i.imgur.com/yu4OWzN.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+            <video controls style="width: 90%; height: auto;">
+                <source src="https://imgur.com/r3WuxZb.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+            <video controls style="width: 90%; height: auto;">
+                <source src="https://imgur.com/jA50teP.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+        </div>
 
-        <h2>معلومات التواصل الاجتماعي</h2>
-        <ul class="social-media">
-            <li><img src="https://i.imgur.com/Jpdakbm_d.webp?maxwidth=1520&fidelity=grand" alt="Telegram"><a href="https://t.me/ISSFII" target="_blank">Telegram</a></li>
-            <li><img src="https://i.imgur.com/aBfqO8v_d.webp?maxwidth=1520&fidelity=grand" alt="Instagram"><a href="https://www.instagram.com/44jj4j/" target="_blank">Instagram</a></li>
-            <li><img src="https://i.imgur.com/VO5MjSE_d.webp?maxwidth=760&fidelity=grand" alt="PUBG"><a href="https://i.imgur.com/VO5MjSE_d.webp?maxwidth=760&fidelity=grand" target="_blank">PUBG</a></li>
-            <li><img src="https://i.imgur.com/Jpdakbm_d.webp?maxwidth=1520&fidelity=grand"
-alt="My Channel"><a href="https://t.me/lshnor" target="_blank">My Channel</a></li>
-        </ul>
+        <div id="audio" class="section">
+            <h2>فويساتي وأغاني</h2>
+            <audio controls style="width: 90%; height: auto;">
+                <source src="your_audio_file.mp3" type="audio/mpeg">
+                متصفحك لا يدعم تشغيل الصوت.
+            </audio>
+            <audio controls style="width: 90%; height: auto;">
+                <source src="your_audio_file2.mp3" type="audio/mpeg">
+                متصفحك لا يدعم تشغيل الصوت.
+            </audio>
+        </div>
+
+        <div id="social" class="section">
+            <h2>معلومات التواصل الاجتماعي</h2>
+            <ul class="social-media">
+                <li><img src="https://i.imgur.com/Jpdakbm_d.webp?maxwidth=1520&fidelity=grand" alt="Telegram"><a href="https://t.me/ISSFII" target="_blank">Telegram</a></li>
+                <li><
+img src="https://i.imgur.com/aBfqO8v_d.webp?maxwidth=1520&fidelity=grand" alt="Instagram"><a href="https://www.instagram.com/44jj4j/" target="_blank">Instagram</a></li>
+                <li><img src="https://i.imgur.com/VO5MjSE_d.webp?maxwidth=760&fidelity=grand" alt="PUBG"><a href="https://i.imgur.com/VO5MjSE_d.webp?maxwidth=760&fidelity=grand" target="_blank">PUBG</a></li>
+                <li><img src="https://i.imgur.com/Jpdakbm_d.webp?maxwidth=1520&fidelity=grand" alt="My Channel"><a href="https://t.me/lshnor" target="_blank">My Channel</a></li>
+            </ul>
+        </div>
     </div>
     <script>
         function incrementViewCount() {
@@ -163,6 +194,12 @@ alt="My Channel"><a href="https://t.me/lshnor" target="_blank">My Channel</a></l
         }
 
         window.onload = incrementViewCount;
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
     </script>
 </body>
 </html>
