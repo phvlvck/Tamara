@@ -1,5 +1,12 @@
+from pywebio import *
+from pywebio.output import *
+from pywebio import start_server
+import requests
+import os
 
-
+def app():
+    put_html("""
+<!DOCTYPE html>
 <html>
 <head>
     <title>موقعي الشخصي</title>
@@ -96,11 +103,11 @@
         .social-media li {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
+            justify-content: center; /* تغيير إلى توسيط العناصر */
         }
 
         .social-media a {
-            margin-left: 10px;
+            margin: 0 10px; /* إضافة هامش بين العناصر */
             font-size: 20px;
         }
 
@@ -124,64 +131,72 @@
                 font-size: 20px;
             }
         }
+
+        /* إضافة أنماط لتوسيط المحتوى */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
-    <img src="https://i.imgur.com/C8hp84G_d.webp?maxwidth=760&fidelity=grand" class="profile-pic">
-    <h1>مرحباً بك في موقعي</h1>
-    <p>| 18 ديسمبر 2023</p>
-    <p>| عدد المشاهدات: <span id="viewCount">7567302</span></p>
-    <p> <span style="font-size: 18px;"><span style="color: blue; font-weight: bold; font-size: 20px;">|</span> 𝗠𝗬 𝗡𝗔𝗠𝗘:𝗔𝗵𝗺𝗲𝗱</span></p>
-    <p> <span style="font-size: 18px;"><span style="color: blue; font-weight: bold; font-size: 20px;">|</span> 𝗠𝗬 𝗡𝗜𝗖𝗞𝗡𝗔𝗠𝗘:𝗕𝗶𝘀𝗼</span></p>
-    <p> <span style="font-size: 18px;"><span style="color: blue; font-weight: bold; font-size: 20px;">|</span> 𝗠𝗠𝗬 𝗔𝗚𝗘:𝟭𝟱</span></p>
-    <p> <span style="font-size: 18px;"><span style="color: blue; font-weight: bold; font-size: 20px;">|</span> 𝗘𝗩𝗘𝗡 𝗠𝗘, 𝗪𝗛𝗢 𝗨𝗦𝗘𝗗 𝗧𝗢 𝗠𝗔𝗞𝗘 𝗧𝗛𝗘𝗠 𝗙𝗘𝗘𝗟 𝗚𝗢𝗢𝗗, 𝗪𝗔𝗦𝗡'𝗧 𝗙𝗘𝗘𝗟𝗜𝗡𝗚 𝗪𝗘𝗟𝗟.</span></p>
-    <p> <span style="font-size: 18px;"><span style="color: blue; font-weight: bold; font-size: 20px;">|</span> 𝗖𝗜𝗧𝗬 ➣ : 𝙆𝙄𝙍𝙆𝙐𝙆</span></p>
-    <p> <span style="font-size: 18px;"><span style="color: blue; font-weight: bold; font-size: 20px;">|</span> 𝗨𝗦𝗘𝗥𝗡𝗔𝗠𝗘 ➣ : @ISSFII</span></p>
+    <div class="container">
+        <img src="https://i.imgur.com/C8hp84G_d.webp?maxwidth=760&fidelity=grand" class="profile-pic">
+        <h1>مرحباً بك في موقعي</h1>
+        <p>| 18 ديسمبر 2023</p>
+        <p>| عدد المشاهدات: <span id="viewCount">7567302</span></p>
+        <p> <span style="font-size: 18px;"><span style="color: blue; font-weight: bold; font-size: 20px;">|</span> 𝗠𝗬 𝗡𝗔𝗠𝗘:𝗔𝗵𝗺𝗲𝗱</span></p>
+        <p> <span style="font-size: 18px;"><span style="color: blue; font-weight: bold; font-size: 20px;">|</span> 𝗠𝗬 𝗡𝗜𝗖𝗞𝗡𝗔𝗠𝗘:𝗕𝗶𝘀𝗼</span></p>
+        <p> <span style="font-size: 18px;"><span style="color: blue; font-weight: bold; font-size: 20px;">|</span> 𝗠𝗠𝗬 𝗔𝗚𝗘:𝟭𝟱</span></p>
+        <p> <span style="font-size: 18px;"><span style="color: blue; font-weight: bold; font-size: 20px;">|</span> 𝗘𝗩𝗘𝗡 𝗠𝗘, 𝗪𝗛𝗢 𝗨𝗦𝗘𝗗 𝗧𝗢 𝗠𝗔𝗞𝗘 𝗧𝗛𝗘𝗠 𝗙𝗘𝗘𝗟 𝗚𝗢𝗢𝗗, 𝗪𝗔𝗦𝗡'𝗧 𝗙𝗘𝗘𝗟𝗜𝗡𝗚 𝗪𝗘𝗟𝗟.</span></p>
+        <p> <span style="font-size: 18px;"><span style="color: blue; font-weight: bold; font-size: 20px;">|</span> 𝗖𝗜𝗧𝗬 ➣ : 𝙆𝙄𝙍𝙆𝙐𝙆</span></p>
+        <p> <span style="font-size: 18px;"><span style="color: blue; font-weight: bold; font-size: 20px;">|</span> 𝗨𝗦𝗘𝗥𝗡𝗔𝗠𝗘 ➣ : @ISSFII</span></p>
 
-    <h2>╰☆☆ 𝗦𝗼𝗰𝗶𝗮𝗹 𝗠𝗲𝗱𝗶𝗮☆☆╮</h2>
-    <ul class="social-media">
-        <p> <img src="https://i.imgur.com/Jpdakbm_d.webp?maxwidth=1520&fidelity=grand" class="icon"><a href="https://t.me/ISSFII" target="_blank">𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦:@𝐈𝐒𝐒𝐅𝐈𝐈</a></p>
-        <p> <img src="https://i.imgur.com/aBfqO8v_d.webp?maxwidth=1520&fidelity=grand" class="instagram-icon"><a href="https://www.instagram.com/44jj4j/" target="_blank">𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦:@𝟒𝟒𝐣𝐣𝟒𝐣</a></p>
-        <p> <img src="https://i.imgur.com/VO5MjSE_d.webp?maxwidth=760&fidelity=grand" class="pubg-icon"><a href="https://i.imgur.com/VO5MjSE_d.webp?maxwidth=760&fidelity=grand" target="_blank">𝐏𝐔𝐁𝐆:𝟓𝟐𝟏𝟏𝟓𝟐𝟎𝟗𝟏𝟏</a></p>
-        <p> <img src="https://i.imgur.com/Jpdakbm_d.webp?maxwidth=1520&fidelity=grand" class="icon"><a href="https://t.me/lshnor" target="_blank">𝗠𝗬 𝗖𝗛𝗔𝗡𝗡𝗘𝗟: @lshnor</a></p>
-    </ul>
-    <hr>
-    <video controls style="width: 90%; height: auto;">
-        <source src="https://i.imgur.com/ceFRyAt.mp4" type="video/mp4">
-        متصفحك لا يدعم تشغيل الفيديو.
-    </video>
-    <p style="font-size: 20px;">
-        | أيام ذاك الوكت من أصفن<br>
-        | عليهن<br>
-        | أبجي مَن اباوع صور ضَاحك<br>
-        | جنت بيهن<br>
-        <br>
-        | گبل للباب اكلج لا تطلعين<br>
-        | هسه شلون اطلعج من حَياتي<br>
-    </p>
-    <hr>
-    <video controls style="width: 90%; height: auto;">
-        <source src="https://i.imgur.com/yu4OWzN.mp4" type="video/mp4">
-        متصفحك لا يدعم
-تشغيل الفيديو.
-    </video>
-    <p style="font-size: 20px;">
-        | لا يُمكنك أن تُشفى في نفس البيئة التي جعلتك مريضا، غادر
-    </p>
-    <hr>
-    <video controls style="width: 90%; height: auto;">
-        <source src="https://imgur.com/r3WuxZb.mp4" type="video/mp4">
-        متصفحك لا يدعم تشغيل الفيديو.
-    </video>
-    <p style="font-size: 20px;">
-        | ناري ماتطفى ولا نارك طفت .
-    </p>
-    <hr>
-    <video controls style="width: 90%; height: auto;">
-        <source src="https://imgur.com/jA50teP.mp4" type="video/mp4">
-        <p>
+        <h2>╰☆☆ 𝗦𝗼𝗰𝗶𝗮𝗹 𝗠𝗲𝗱𝗶𝗮☆☆╮</h2>
+        <ul class="social-media">
+            <li><img src="https://i.imgur.com/Jpdakbm_d.webp?maxwidth=1520&fidelity=grand" class="icon"><a href="https://t.me/ISSFII" target="_blank">𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦:@𝐈𝐒𝐒𝐅𝐈𝐈</a></li>
+            <li><img src="https://i.imgur.com/aBfqO8v_d.webp?maxwidth=1520&fidelity=grand" class="instagram-icon"><a href="https://www.instagram.com/44jj4j/" target="_blank">𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦:@𝟒𝟒𝐣𝐣𝟒𝐣</a></li>
+            <li><img src="https://i.imgur.com/VO5MjSE_d.webp?maxwidth=760&fidelity=grand" class="pubg-icon"><a href="https://i.imgur.com/VO5MjSE_d.webp?maxwidth=760&fidelity=grand" target="_blank">𝐏𝐔𝐁𝐆:𝟓𝟐𝟏𝟏𝟓𝟐𝟎𝟗𝟏𝟏</a></li>
+            <li><img src="https://i.imgur.com/Jpdakbm_d.webp?maxwidth=1520&fidelity=grand" class="icon"><a href="https://t.me/lshnor" target="_blank">𝗠𝗬 𝗖𝗛𝗔𝗡𝗡𝗘𝗟: @lshnor</a></li>
+        </ul>
+        <hr>
+        <video controls style="width: 90%; height: auto;">
+            <source src="https://i.imgur.com/ceFRyAt.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+        </video>
+        <p style="font-size: 20px;">
+            | أيام ذاك الوكت من أصف
+ن<br>
+            | عليهن<br>
+            | أبجي مَن اباوع صور ضَاحك<br>
+            | جنت بيهن<br>
+            <br>
+            | گبل للباب اكلج لا تطلعين<br>
+            | هسه شلون اطلعج من حَياتي<br>
         </p>
-    </body>
+        <hr>
+        <video controls style="width: 90%; height: auto;">
+            <source src="https://i.imgur.com/yu4OWzN.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+        </video>
+        <p style="font-size: 20px;">
+            | لا يُمكنك أن تُشفى في نفس البيئة التي جعلتك مريضا، غادر
+        </p>
+        <hr>
+        <video controls style="width: 90%; height: auto;">
+            <source src="https://imgur.com/r3WuxZb.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+        </video>
+        <p style="font-size: 20px;">
+            | ناري ماتطفى ولا نارك طفت .
+        </p>
+        <hr>
+        <video controls style="width: 90%; height: auto;">
+            <source src="https://imgur.com/jA50teP.mp4" type="video/mp4">
+            <p>
+            </p>
+    </div>
     <script>
         // دالة لزيادة عدد المشاهدات
         function incrementViewCount() {
@@ -194,6 +209,9 @@
         // استدعاء الدالة عند تحميل الصفحة
         window.onload = incrementViewCount;
     </script>
+</body>
 </html>
+    """)
 
-
+if __name__ == '__main__':
+    start_server(app, port=8080, host='0.0.0.0', debug=True)
