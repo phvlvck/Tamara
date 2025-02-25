@@ -1,11 +1,4 @@
-from pywebio import *
-from pywebio.output import *
-from pywebio import start_server
-import requests
-import os
 
-def app():
-    put_html("""
 <!DOCTYPE html>
 <html>
 <head>
@@ -211,7 +204,3 @@ def app():
     </script>
 </body>
 </html>
-    """)
-
-if __name__ == '__main__':
-    start_server(app, port=8080, host='0.0.0.0', debug=True)
