@@ -6,7 +6,7 @@
         body {
             background-image: url('https://i.imgur.com/Svel1rB_d.webp?maxwidth=760&fidelity=grand');
             background-size: cover;
-            background-repeat: repeat; /* تكرار الخلفية لملء الشاشة */
+            background-repeat: repeat;
             background-attachment: fixed;
             background-color: black;
             font-family: monospace;
@@ -17,7 +17,7 @@
             min-height: 100vh;
             padding: 10px;
             box-sizing: border-box;
-            animation: moveBackground 20s linear infinite; /* إضافة الحركة */
+            animation: moveBackground 20s linear infinite;
         }
 
         @keyframes moveBackground {
@@ -25,34 +25,20 @@
             100% { background-position: 100% 100%; }
         }
 
-        h1, h2 {
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
             text-align: center;
             margin-bottom: 20px;
             color: #e91e63;
         }
 
-        p, ul, li {
+        p {
             margin-bottom: 15px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            padding: 10px;
-            border-bottom: 1px solid #555;
-        }
-
-        a {
-            color: #4caf50;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #8bc34a;
         }
 
         img {
@@ -64,54 +50,29 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
-        audio, video {
+        video, audio {
             display: block;
             margin: 20px auto;
             max-width: 90%;
             height: auto;
         }
 
-        .icon, .instagram-icon, .pubg-icon {
-            width: 30px;
-            height: 30px;
-            vertical-align: middle;
-            margin-right: 10px;
-        }
-
-        .video-container {
+        .social-media {
+            list-style-type: none;
+            padding: 0;
             text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .video-container p {
-            margin-top: 10px;
-            font-style: italic;
-            color: #aaa;
-        }
-
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-            margin: 20px auto;
         }
 
         .social-media li {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: inline-block;
+            margin: 10px;
         }
 
-        .social-media a {
-            margin: 0 10px;
-            font-size: 20px;
-        }
-
-        h1, h2, p, ul, li {
-            padding-left: 5px;
-            padding-right: 5px;
+        .social-media img {
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+            margin-right: 10px;
         }
 
         body {
@@ -129,18 +90,12 @@
                 font-size: 20px;
             }
         }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="https://i.imgur.com/C8hp84G_d.webp?maxwidth=760&fidelity=grand" class="profile-pic">
-        <h1>مرحباً بك في موقعي</h1>
+        <h2>مرحباً بك في موقعي</h2>
         <p>| 18 ديسمبر 2023</p>
         <p>| عدد المشاهدات: <span id="viewCount">7567302</span></p>
         <p> <span style="font-size: 18px;"><span style="color: blue; font-weight: bold; font-size: 20px;">|</span> 𝗠𝗬 𝗡𝗔𝗠𝗘:𝗔𝗵𝗺𝗲𝗱</span></p>
@@ -150,51 +105,56 @@
         <p> <span style="font-size: 18px;"><span style="color: blue; font-weight: bold; font-size: 20px;">|</span> 𝗖𝗜𝗧𝗬 ➣ : 𝙆𝙄𝙍𝙆𝙐𝙆</span></p>
         <p> <span style="font-size: 18px;"><span style="color: blue; font-weight: bold; font-size: 20px;">|</span> 𝗨𝗦𝗘𝗥𝗡𝗔𝗠𝗘 ➣ : @ISSFII</span></p>
 
-        <h2>╰☆☆ 𝗦𝗼𝗰𝗶𝗮𝗹 𝗠𝗲𝗱𝗶𝗮☆☆╮</h2>
-        <ul class="social-media">
-            <li><img src="https://i.imgur.com/Jpdakbm_d.webp?maxwidth=1520&fidelity=grand" class="icon"><a href="https://t.me/ISSFII" target="_blank">𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦:@𝐈𝐒𝐒𝐅𝐈𝐈</a></li>
-            <li><img src="https://i.imgur.com/aBfqO8v_d.webp?maxwidth=1520&fidelity=grand" class="instagram-icon"><a href="https://www.instagram.com/44jj4j/" target="_blank">𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦:@𝟒𝟒𝐣𝐣𝟒𝐣</a></li>
-            <li><img src="https://i.imgur.com/VO5MjSE_d.webp?maxwidth=760&fidelity=grand" class="pubg-icon"><a href="https://i.imgur.com/VO5MjSE_d.webp?maxwidth=760&fidelity=grand" target="_blank">𝐏𝐔𝐁𝐆:𝟓𝟐𝟏𝟏𝟓𝟐𝟎𝟗𝟏𝟏</a></li>
-            <li><img src="https://i.imgur.com/Jpdakbm_d.webp?maxwidth=1520&fidelity=grand" class="icon"><a href="https://t.me/lshnor" target="_blank">𝗠𝗬 𝗖𝗛𝗔𝗡𝗡𝗘𝗟: @lshnor</a></li>
-        </ul>
-        <hr>
-        <video controls style="width: 90%; height: auto;">
-            <source src="https://i.imgur.com/ceFRyAt.mp4" type="video/mp4">
-            متصفحك لا يدعم تشغيل الفيديو.
-        </video>
-        <p style="font-size: 20px;">
-            | أيام ذاك الوكت من أصفن<br>
+        <h2>كتاباتي</h2>
+        <p>| أيام ذاك الوكت من أصفن<br>
             | عليهن<br>
             | أبجي مَن اباوع صور ضَاحك<br>
             | جنت بيهن<br>
             <br>
             | گبل للباب اكلج لا تطلعين<br>
             | هسه شلون اطلعج من حَياتي<br>
+            | لا يُمكنك أن تُشفى في نفس البيئة التي جعلتك مريضا، غادر<br>
+            | ناري ماتطفى ولا نارك طفت .
         </p>
-        <hr>
+
+        <h2>فيديوهاتي</h2>
+        <video controls style="width: 90%; height: auto;">
+            <source src="https://i.imgur.com/ceFRyAt.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+        </video>
         <video controls style="width: 90%; height: auto;">
             <source src="https://i.imgur.com/yu4OWzN.mp4" type="video/mp4">
             متصفحك لا يدعم تشغيل الفيديو.
         </video>
-        <p style="font-size: 20px;">
-            | لا يُمكنك أن تُشفى في نفس البيئة التي جعلتك مريضا، غادر
-        </p>
-        <hr>
         <video controls style="width: 90%; height: auto;">
             <source src="https://imgur.com/r3WuxZb.mp4" type="video/mp4">
             متصفحك لا يدعم تشغيل الفيديو.
         </video>
-        <p style="font-size: 20px;">
-            | ناري ماتطفى ولا نارك طفت .
-        </p>
-        <hr>
         <video controls style="width: 90%; height: auto;">
             <source src="https://imgur.com/jA50teP.mp4" type="video/mp4">
-            <p>
-            </p>
+            متصفحك لا يدعم تشغيل الفيديو.
+        </video>
+
+        <h2>فويساتي وأغاني</h2>
+        <audio controls style="width: 90%; height: auto;">
+            <source src="your_audio_file.mp3" type="audio/mpeg">
+            متصفحك لا يدعم تشغيل الصوت.
+        </audio>
+        <audio controls style="width: 90%; height: auto;">
+            <source src="your_audio_file2.mp3" type="audio/mpeg">
+            متصفحك لا يدعم تشغيل الصوت.
+        </audio>
+
+        <h2>معلومات التواصل الاجتماعي</h2>
+        <ul class="social-media">
+            <li><img src="https://i.imgur.com/Jpdakbm_d.webp?maxwidth=1520&fidelity=grand" alt="Telegram"><a href="https://t.me/ISSFII" target="_blank">Telegram</a></li>
+            <li><img src="https://i.imgur.com/aBfqO8v_d.webp?maxwidth=1520&fidelity=grand" alt="Instagram"><a href="https://www.instagram.com/44jj4j/" target="_blank">Instagram</a></li>
+            <li><img src="https://i.imgur.com/VO5MjSE_d.webp?maxwidth=760&fidelity=grand" alt="PUBG"><a href="https://i.imgur.com/VO5MjSE_d.webp?maxwidth=760&fidelity=grand" target="_blank">PUBG</a></li>
+            <li><img src="https://i.imgur.com/Jpdakbm_d.webp?maxwidth=1520&fidelity=grand"
+alt="My Channel"><a href="https://t.me/lshnor" target="_blank">My Channel</a></li>
+        </ul>
     </div>
     <script>
-        // دالة لزيادة عدد المشاهدات
         function incrementViewCount() {
             let viewCountElement = document.getElementById("viewCount");
             let currentViewCount = parseInt(viewCountElement.textContent);
@@ -202,7 +162,6 @@
             viewCountElement.textContent = currentViewCount;
         }
 
-        // استدعاء الدالة عند تحميل الصفحة
         window.onload = incrementViewCount;
     </script>
 </body>
