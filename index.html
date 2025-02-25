@@ -124,11 +124,31 @@
         button:hover {
             background-color: #c2185b;
         }
+
+        /* ألوان الأقسام */
+        #writing h2 { color: #4CAF50; }
+        #videos h2 { color: #2196F3; }
+        #audio h2 { color: #FF9800; }
+        #social h2 { color: #9C27B0; }
+
+        /* نمط كتابة الأقسام */
+        .section h2 {
+            font-weight: bold;
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>مرحباً بك في موقعي</h2>
+        <h2>مرحباً بك في موقعي </h2>
         <p>| 18 ديسمبر 2023</p>
         <p>| عدد المشاهدات: <span id="viewCount">7567302</span></p>
         <p> <span style="font-size: 18px;"><span style="color: #4CAF50; font-weight: bold; font-size: 20px;">|</span> 𝗠𝗬 𝗡𝗔𝗠𝗘:𝗔𝗵𝗺𝗲𝗱</span></p>
@@ -139,14 +159,14 @@
         <p> <span style="font-size: 18px;"><span style="color: #4CAF50; font-weight: bold; font-size: 20px;">|</span> 𝗨𝗦𝗘𝗥𝗡𝗔𝗠𝗘 ➣ : @ISSFII</span></p>
 
         <div>
-            <button onclick="showSection('writing')">كتاباتي</button>
-            <button onclick="showSection('videos')">فيديوهاتي</button>
-            <button onclick="showSection('audio')">فويساتي وأغاني</button>
-            <button onclick="showSection('social')">معلومات التواصل الاجتماعي</button>
+            <button onclick="showSection('writing')">كتاباتي </button>
+            <button onclick="showSection('videos')">فيديوهاتي </button>
+            <button onclick="showSection('audio')">فويساتي وأغاني </button>
+            <button onclick="showSection('social')">معلومات التواصل الاجتماعي </button>
         </div>
 
         <div id="writing" class="section active">
-            <h2>كتاباتي</h2>
+            <h2>كتاباتي </h2>
             <p>| أيام ذاك الوكت من أصفن<br>
                 | عليهن<br>
                 | أبجي مَن اباوع صور ضَاحك<br>
@@ -160,7 +180,7 @@
         </div>
 
         <div id="videos" class="section">
-            <h2>فيديوهاتي</h2>
+            <h2>فيديوهاتي </h2>
             <video controls style="width: 90%; height: auto;">
                 <source src="https://i.imgur.com/ceFRyAt.mp4" type="video/mp4">
                 متصفحك لا يدعم تشغيل الفيديو.
@@ -179,9 +199,8 @@
             </video>
         </div>
 
-        <div id="audio" class="
-audio" class="section">
-            <h2>فويساتي وأغاني</h2>
+        <div id="audio" class="section">
+            <h2>فويساتي وأغاني </h2>
             <audio controls style="width: 90%; height: auto;">
                 <source src="your_audio_file.mp3" type="audio/mpeg">
                 متصفحك لا يدعم تشغيل الصوت.
@@ -193,7 +212,7 @@ audio" class="section">
         </div>
 
         <div id="social" class="section">
-            <h2>معلومات التواصل الاجتماعي</h2>
+            <h2>معلومات التواصل الاجتماعي </h2>
             <ul class="social-media">
                 <li><img src="https://i.imgur.com/Jpdakbm_d.webp?maxwidth=1520&fidelity=grand" alt="Telegram"><a href="https://t.me/ISSFII" target="_blank">Telegram</a></li>
                 <li><img src="https://i.imgur.com/aBfqO8v_d.webp?maxwidth=1520&fidelity=grand" alt="Instagram"><a href="https://www.instagram.com/44jj4j/" target="_blank">Instagram</a></li>
